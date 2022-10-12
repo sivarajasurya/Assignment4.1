@@ -27,9 +27,9 @@ public class Assignment4 {
             System.out.println("Enter the country name \n");
             usingCountryName(get.next().toUpperCase());
         } else if (i==2) {
+            System.out.println("Enter the country code \n");
             usingCountryCode(get.next().toUpperCase());
         }else {
-            System.out.println("Enter the country code \n");
             System.out.println("Entered wrong in put ");
         }
 
