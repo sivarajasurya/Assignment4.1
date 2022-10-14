@@ -9,16 +9,14 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Assignment4 {
-
  static Scanner get = new Scanner(System.in);
  static Map<String,String> file = new HashMap<>();
     public static void main(String[] args) throws IOException {
 
       ObjectMapper objectMapper = new ObjectMapper();
       File jsonFile = new File(".\\jason\\countries.json");
-      List<Country> countries = objectMapper.readValue(jsonFile, new TypeReference<List<Country>>() {});
+      List<Country> countries = objectMapper.readValue(jsonFile, new TypeReference<>(){});
       countries.forEach(obj1 -> map(obj1.getName(), obj1.getCode()));
-
 
         System.out.println("Enter whether you want to find the country name or by using country code \n 1 for Find using country code \n 2 Find using Country name");
         int i = get.nextInt();
@@ -46,7 +44,6 @@ public class Assignment4 {
         }
         get.close();
     }
-
 
     public static void usingCountryCode(String code){
         String a = getKey(file, code);
